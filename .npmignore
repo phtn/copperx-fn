@@ -1,0 +1,41 @@
+# Source files
+src/
+tests/
+
+# Development files
+.git/
+.gitignore
+tsconfig.json
+*.config.*
+.cursor/
+CLAUDE.md
+
+# Build artifacts (before build)
+*.tsbuildinfo
+
+# Dependencies
+node_modules/
+
+# Logs and temporary files
+*.log
+.DS_Store
+coverage/
+.nyc_output/
+
+# Environment files
+.env
+.env.*
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Test files
+*.test.ts
+*.test.js
+*.spec.ts
+*.spec.js
+
