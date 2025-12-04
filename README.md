@@ -1,6 +1,6 @@
 # Copper-X Pure Function SDK
 
-![Tests](https://github.com/phtn/copperx-fn/actions/workflows/test.yml/badge.svg)
+![Tests](https://github.com/phtn/copperx-fn/actions/workflows/test.yml/badge.svg?branch=main)
 
 A pure function, type-safe TypeScript client SDK for the [Copperx API](https://copperx.readme.io/). Built with Bun and designed for modern TypeScript projects.
 
