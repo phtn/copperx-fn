@@ -73,7 +73,7 @@ describe('Invoices Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/invoices')
+        expect(url).toBe('/api/v1/invoices')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -148,7 +148,7 @@ describe('Invoices Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/invoices')
+        expect(url).toBe('/api/v1/invoices')
         return mockResponse
       })
 
@@ -186,7 +186,7 @@ describe('Invoices Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/invoices/inv_123')
+        expect(url).toBe('/api/v1/invoices/inv_123')
         return mockResponse
       })
 
@@ -223,7 +223,7 @@ describe('Invoices Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string, data: unknown) => {
-        expect(url).toBe('/invoices/inv_123')
+        expect(url).toBe('/api/v1/invoices/inv_123')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -245,7 +245,7 @@ describe('Invoices Resource', () => {
   describe('delete()', () => {
     test('should delete invoice successfully', async () => {
       mockClient.setMockDelete(async (url: string) => {
-        expect(url).toBe('/invoices/inv_123')
+        expect(url).toBe('/api/v1/invoices/inv_123')
         return undefined
       })
 
@@ -260,7 +260,7 @@ describe('Invoices Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string) => {
-        expect(url).toBe('/invoices/inv_123/duplicate')
+        expect(url).toBe('/api/v1/invoices/inv_123/duplicate')
         return mockResponse
       })
 
@@ -277,7 +277,7 @@ describe('Invoices Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string) => {
-        expect(url).toBe('/invoices/inv_123/void')
+        expect(url).toBe('/api/v1/invoices/inv_123/void')
         return mockResponse
       })
 
@@ -295,7 +295,7 @@ describe('Invoices Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string) => {
-        expect(url).toBe('/invoices/inv_123/uncollectible')
+        expect(url).toBe('/api/v1/invoices/inv_123/uncollectible')
         return mockResponse
       })
 
@@ -312,7 +312,7 @@ describe('Invoices Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string) => {
-        expect(url).toBe('/invoices/inv_123/finalize')
+        expect(url).toBe('/api/v1/invoices/inv_123/finalize')
         return mockResponse
       })
 
@@ -329,7 +329,7 @@ describe('Invoices Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/invoices/inv_123/send')
+        expect(url).toBe('/api/v1/invoices/inv_123/send')
         return mockResponse
       })
 
@@ -344,7 +344,7 @@ describe('Invoices Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/invoices/inv_123/send')
+        expect(url).toBe('/api/v1/invoices/inv_123/send')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -364,7 +364,7 @@ describe('Invoices Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/invoices/inv_123/mark-paid')
+        expect(url).toBe('/api/v1/invoices/inv_123/mark-paid')
         return mockResponse
       })
 

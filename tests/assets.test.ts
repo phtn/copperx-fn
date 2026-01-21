@@ -40,7 +40,7 @@ describe('Assets Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/assets')
+        expect(url).toBe('/api/v1/assets')
         return mockResponse
       })
 
@@ -62,7 +62,7 @@ describe('Assets Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/assets')
+        expect(url).toBe('/api/v1/assets')
         return mockResponse
       })
 
@@ -105,7 +105,7 @@ describe('Assets Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/assets/asset_123')
+        expect(url).toBe('/api/v1/assets/asset_123')
         return mockResponse
       })
 

@@ -42,7 +42,7 @@ describe('Users Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/users')
+        expect(url).toBe('/api/v1/users')
         return mockResponse
       })
 
@@ -64,7 +64,7 @@ describe('Users Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/users')
+        expect(url).toBe('/api/v1/users')
         return mockResponse
       })
 
@@ -95,7 +95,7 @@ describe('Users Resource', () => {
   describe('delete()', () => {
     test('should delete user successfully', async () => {
       mockClient.setMockDelete(async (url: string) => {
-        expect(url).toBe('/users/user_123')
+        expect(url).toBe('/api/v1/users/user_123')
         return undefined
       })
 
@@ -126,7 +126,7 @@ describe('Users Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string, data: unknown) => {
-        expect(url).toBe('/users/user_123/role')
+        expect(url).toBe('/api/v1/users/user_123/role')
         expect(data).toBeDefined()
         return mockResponse
       })

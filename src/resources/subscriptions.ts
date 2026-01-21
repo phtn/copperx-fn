@@ -12,13 +12,13 @@ export function createSubscriptionsResource(client: HTTPClient) {
     async list(
       params?: ListSubscriptionsParams
     ): Promise<ListSubscriptionsResponse> {
-      return client.get<ListSubscriptionsResponse>('/subscriptions', {
+      return client.get<ListSubscriptionsResponse>('/api/v1/subscriptions', {
         params,
       });
     },
 
     async get(id: string): Promise<SubscriptionResponse> {
-      return client.get<SubscriptionResponse>(`/subscriptions/${id}`);
+      return client.get<SubscriptionResponse>(`/api/v1/subscriptions/${id}`);
     },
 
     async cancel(
@@ -26,18 +26,18 @@ export function createSubscriptionsResource(client: HTTPClient) {
       params?: CancelSubscriptionParams
     ): Promise<CancelSubscriptionResponse> {
       return client.post<CancelSubscriptionResponse>(
-        `/subscriptions/${id}/cancel`,
+        `/api/v1/subscriptions/${id}/cancel`,
         params
       );
     },
 
     async resume(id: string): Promise<SubscriptionResponse> {
-      return client.post<SubscriptionResponse>(`/subscriptions/${id}/resume`);
+      return client.post<SubscriptionResponse>(`/api/v1/subscriptions/${id}/resume`);
     },
 
     async cancelImmediately(id: string): Promise<CancelSubscriptionResponse> {
       return client.post<CancelSubscriptionResponse>(
-        `/subscriptions/${id}/cancel-immediately`
+        `/api/v1/subscriptions/${id}/cancel-immediately`
       );
     },
   };

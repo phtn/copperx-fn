@@ -9,13 +9,13 @@ import type {
 export function createUsersResource(client: HTTPClient) {
   return {
     async list(params?: ListUsersParams): Promise<ListUsersResponse> {
-      return client.get<ListUsersResponse>('/users', {
+      return client.get<ListUsersResponse>('/api/v1/users', {
         params,
       });
     },
 
     async delete(userId: string): Promise<void> {
-      return client.delete<void>(`/users/${userId}`);
+      return client.delete<void>(`/api/v1/users/${userId}`);
     },
 
     async updateRole(
@@ -23,7 +23,7 @@ export function createUsersResource(client: HTTPClient) {
       params: UpdateUserRoleParams
     ): Promise<UpdateUserRoleResponse> {
       return client.put<UpdateUserRoleResponse>(
-        `/users/${userId}/role`,
+        `/api/v1/users/${userId}/role`,
         params
       );
     },

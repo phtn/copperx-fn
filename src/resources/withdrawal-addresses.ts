@@ -15,7 +15,7 @@ export function createWithdrawalAddressesResource(client: HTTPClient) {
       params?: ListWithdrawalAddressesParams
     ): Promise<ListWithdrawalAddressesResponse> {
       return client.get<ListWithdrawalAddressesResponse>(
-        '/withdrawal-addresses',
+        '/api/v1/withdrawal-addresses',
         { params }
       );
     },
@@ -24,14 +24,14 @@ export function createWithdrawalAddressesResource(client: HTTPClient) {
       params: CreateWithdrawalAddressParams
     ): Promise<CreateWithdrawalAddressResponse> {
       return client.post<CreateWithdrawalAddressResponse>(
-        '/withdrawal-addresses',
+        '/api/v1/withdrawal-addresses',
         params
       );
     },
 
     async get(id: string): Promise<WithdrawalAddressResponse> {
       return client.get<WithdrawalAddressResponse>(
-        `/withdrawal-addresses/${id}`
+        `/api/v1/withdrawal-addresses/${id}`
       );
     },
 
@@ -40,18 +40,18 @@ export function createWithdrawalAddressesResource(client: HTTPClient) {
       params: UpdateWithdrawalAddressParams
     ): Promise<UpdateWithdrawalAddressResponse> {
       return client.put<UpdateWithdrawalAddressResponse>(
-        `/withdrawal-addresses/${id}`,
+        `/api/v1/withdrawal-addresses/${id}`,
         params
       );
     },
 
     async delete(id: string): Promise<void> {
-      return client.delete<void>(`/withdrawal-addresses/${id}`);
+      return client.delete<void>(`/api/v1/withdrawal-addresses/${id}`);
     },
 
     async markAsDefault(id: string): Promise<WithdrawalAddressResponse> {
       return client.post<WithdrawalAddressResponse>(
-        `/withdrawal-addresses/${id}/default`
+        `/api/v1/withdrawal-addresses/${id}/default`
       );
     },
   };

@@ -29,7 +29,7 @@ describe('Organization Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/organization')
+        expect(url).toBe('/api/v1/organization')
         return mockResponse
       })
 
@@ -72,7 +72,7 @@ describe('Organization Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string, data: unknown) => {
-        expect(url).toBe('/organization/branding')
+        expect(url).toBe('/api/v1/organization/branding')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -98,7 +98,7 @@ describe('Organization Resource', () => {
   describe('deleteBrandLogo()', () => {
     test('should delete brand logo successfully', async () => {
       mockClient.setMockDelete(async (url: string) => {
-        expect(url).toBe('/organization/brand-logo')
+        expect(url).toBe('/api/v1/organization/brand-logo')
         return undefined
       })
 

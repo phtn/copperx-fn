@@ -35,7 +35,7 @@ describe('Customers Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/customers')
+        expect(url).toBe('/api/v1/customers')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -101,7 +101,7 @@ describe('Customers Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/customers')
+        expect(url).toBe('/api/v1/customers')
         return mockResponse
       })
 
@@ -123,7 +123,7 @@ describe('Customers Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/customers')
+        expect(url).toBe('/api/v1/customers')
         return mockResponse
       })
 
@@ -154,7 +154,7 @@ describe('Customers Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/customers/cus_123')
+        expect(url).toBe('/api/v1/customers/cus_123')
         return mockResponse
       })
 
@@ -188,7 +188,7 @@ describe('Customers Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string, data: unknown) => {
-        expect(url).toBe('/customers/cus_123')
+        expect(url).toBe('/api/v1/customers/cus_123')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -215,7 +215,7 @@ describe('Customers Resource', () => {
   describe('delete()', () => {
     test('should delete customer successfully', async () => {
       mockClient.setMockDelete(async (url: string) => {
-        expect(url).toBe('/customers/cus_123')
+        expect(url).toBe('/api/v1/customers/cus_123')
         return undefined
       })
 

@@ -14,26 +14,26 @@ export function createCustomersResource(client: HTTPClient) {
     async create(
       params: CreateCustomerParams
     ): Promise<CreateCustomerResponse> {
-      return client.post<CreateCustomerResponse>('/customers', params);
+      return client.post<CreateCustomerResponse>('/api/v1/customers', params);
     },
 
     async list(params?: ListCustomersParams): Promise<ListCustomersResponse> {
-      return client.get<ListCustomersResponse>('/customers', { params });
+      return client.get<ListCustomersResponse>('/api/v1/customers', { params });
     },
 
     async get(id: string): Promise<CustomerResponse> {
-      return client.get<CustomerResponse>(`/customers/${id}`);
+      return client.get<CustomerResponse>(`/api/v1/customers/${id}`);
     },
 
     async update(
       id: string,
       params: UpdateCustomerParams
     ): Promise<UpdateCustomerResponse> {
-      return client.put<UpdateCustomerResponse>(`/customers/${id}`, params);
+      return client.put<UpdateCustomerResponse>(`/api/v1/customers/${id}`, params);
     },
 
     async delete(id: string): Promise<void> {
-      return client.delete<void>(`/customers/${id}`);
+      return client.delete<void>(`/api/v1/customers/${id}`);
     },
   };
 }

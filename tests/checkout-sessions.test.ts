@@ -40,7 +40,7 @@ describe('Checkout Sessions Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/checkout-sessions')
+        expect(url).toBe('/api/v1/checkout/sessions')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -87,7 +87,7 @@ describe('Checkout Sessions Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/checkout-sessions')
+        expect(url).toBe('/api/v1/checkout/sessions')
         return mockResponse
       })
 
@@ -112,7 +112,7 @@ describe('Checkout Sessions Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/checkout-sessions/cs_123')
+        expect(url).toBe('/api/v1/checkout/sessions/cs_123')
         return mockResponse
       })
 
@@ -129,7 +129,7 @@ describe('Checkout Sessions Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/checkout-sessions/cs_123/status')
+        expect(url).toBe('/api/v1/checkout/sessions/cs_123/status')
         return mockResponse
       })
 
@@ -154,7 +154,7 @@ describe('Checkout Sessions Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/checkout-sessions/cs_123/recover')
+        expect(url).toBe('/api/v1/checkout/sessions/cs_123/recover')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -181,7 +181,7 @@ describe('Checkout Sessions Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/checkout-sessions/cs_123/complete')
+        expect(url).toBe('/api/v1/checkout/sessions/cs_123/complete')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -211,7 +211,7 @@ describe('Checkout Sessions Resource', () => {
       const mockBlob = new Blob(['csv,data'], { type: 'text/csv' })
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/checkout-sessions/export')
+        expect(url).toBe('/api/v1/checkout/sessions/export')
         return mockBlob
       })
 

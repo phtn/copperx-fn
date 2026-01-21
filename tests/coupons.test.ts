@@ -47,7 +47,7 @@ describe('Coupons Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/coupons')
+        expect(url).toBe('/api/v1/coupons')
         return mockResponse
       })
 
@@ -83,7 +83,7 @@ describe('Coupons Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/coupons')
+        expect(url).toBe('/api/v1/coupons')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -132,7 +132,7 @@ describe('Coupons Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/coupons/coupon_123')
+        expect(url).toBe('/api/v1/coupons/coupon_123')
         return mockResponse
       })
 
@@ -159,7 +159,7 @@ describe('Coupons Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string, data: unknown) => {
-        expect(url).toBe('/coupons/coupon_123')
+        expect(url).toBe('/api/v1/coupons/coupon_123')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -189,7 +189,7 @@ describe('Coupons Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string) => {
-        expect(url).toBe('/coupons/coupon_123/enable')
+        expect(url).toBe('/api/v1/coupons/coupon_123/enable')
         return mockResponse
       })
 
@@ -217,7 +217,7 @@ describe('Coupons Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string) => {
-        expect(url).toBe('/coupons/coupon_123/disable')
+        expect(url).toBe('/api/v1/coupons/coupon_123/disable')
         return mockResponse
       })
 
@@ -245,7 +245,7 @@ describe('Coupons Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string) => {
-        expect(url).toBe('/coupons/coupon_123/archive')
+        expect(url).toBe('/api/v1/coupons/coupon_123/archive')
         return mockResponse
       })
 

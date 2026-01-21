@@ -46,7 +46,7 @@ describe('Subscriptions Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/subscriptions')
+        expect(url).toBe('/api/v1/subscriptions')
         return mockResponse
       })
 
@@ -84,7 +84,7 @@ describe('Subscriptions Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/subscriptions/sub_123')
+        expect(url).toBe('/api/v1/subscriptions/sub_123')
         return mockResponse
       })
 
@@ -112,7 +112,7 @@ describe('Subscriptions Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/subscriptions/sub_123/cancel')
+        expect(url).toBe('/api/v1/subscriptions/sub_123/cancel')
         return mockResponse
       })
 
@@ -138,7 +138,7 @@ describe('Subscriptions Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/subscriptions/sub_123/cancel')
+        expect(url).toBe('/api/v1/subscriptions/sub_123/cancel')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -168,7 +168,7 @@ describe('Subscriptions Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string) => {
-        expect(url).toBe('/subscriptions/sub_123/resume')
+        expect(url).toBe('/api/v1/subscriptions/sub_123/resume')
         return mockResponse
       })
 
@@ -196,7 +196,7 @@ describe('Subscriptions Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string) => {
-        expect(url).toBe('/subscriptions/sub_123/cancel-immediately')
+        expect(url).toBe('/api/v1/subscriptions/sub_123/cancel-immediately')
         return mockResponse
       })
 

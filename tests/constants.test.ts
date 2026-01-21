@@ -28,7 +28,7 @@ describe('Constants Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/constants/prices')
+        expect(url).toBe('/api/v1/constants/prices')
         return mockResponse
       })
 

@@ -40,7 +40,7 @@ describe('Transactions Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/transactions')
+        expect(url).toBe('/api/v1/transactions')
         return mockResponse
       })
 
@@ -62,7 +62,7 @@ describe('Transactions Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/transactions')
+        expect(url).toBe('/api/v1/transactions')
         return mockResponse
       })
 

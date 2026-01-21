@@ -34,7 +34,7 @@ describe('Partner Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/partner/accounts')
+        expect(url).toBe('/api/v1/partner/accounts')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -112,7 +112,7 @@ describe('Partner Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/partner/accounts/by-emails')
+        expect(url).toBe('/api/v1/partner/accounts/by-emails')
         return mockResponse
       })
 
@@ -139,7 +139,7 @@ describe('Partner Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/partner/accounts/by-emails')
+        expect(url).toBe('/api/v1/partner/accounts/by-emails')
         return mockResponse
       })
 

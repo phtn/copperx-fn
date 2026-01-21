@@ -37,7 +37,7 @@ describe('Payment Links Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/payment-links')
+        expect(url).toBe('/api/v1/payment-links')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -90,7 +90,7 @@ describe('Payment Links Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/payment-links')
+        expect(url).toBe('/api/v1/payment-links')
         return mockResponse
       })
 
@@ -116,7 +116,7 @@ describe('Payment Links Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/payment-links/pl_123')
+        expect(url).toBe('/api/v1/payment-links/pl_123')
         return mockResponse
       })
 
@@ -141,7 +141,7 @@ describe('Payment Links Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string, data: unknown) => {
-        expect(url).toBe('/payment-links/pl_123')
+        expect(url).toBe('/api/v1/payment-links/pl_123')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -157,7 +157,7 @@ describe('Payment Links Resource', () => {
   describe('delete()', () => {
     test('should delete payment link successfully', async () => {
       mockClient.setMockDelete(async (url: string) => {
-        expect(url).toBe('/payment-links/pl_123')
+        expect(url).toBe('/api/v1/payment-links/pl_123')
         return undefined
       })
 
@@ -180,7 +180,7 @@ describe('Payment Links Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string) => {
-        expect(url).toBe('/payment-links/pl_123/activate')
+        expect(url).toBe('/api/v1/payment-links/pl_123/activate')
         return mockResponse
       })
 
@@ -206,7 +206,7 @@ describe('Payment Links Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string) => {
-        expect(url).toBe('/payment-links/pl_123/deactivate')
+        expect(url).toBe('/api/v1/payment-links/pl_123/deactivate')
         return mockResponse
       })
 

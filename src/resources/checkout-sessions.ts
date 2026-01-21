@@ -14,7 +14,11 @@ import type {
 export function createCheckoutSessionsResource(client: HTTPClient) {
   return {
     async create(params: CreateCheckoutSessionParams): Promise<CreateCheckoutSessionResponse> {
-      return client.post<CreateCheckoutSessionResponse>('/api/v1/checkout/sessions', params)
+      // If lineItems is provided, wrap it in data property for the API
+      const payload = params.lineItems
+        ? { data: params.lineItems }
+        : params
+      return client.post<CreateCheckoutSessionResponse>('/api/v1/checkout/sessions', payload)
     },
 
     async list(params?: ListCheckoutSessionsParams): Promise<ListCheckoutSessionsResponse> {

@@ -14,19 +14,19 @@ export function createPaymentLinksResource(client: HTTPClient) {
     async create(
       params: CreatePaymentLinkParams
     ): Promise<CreatePaymentLinkResponse> {
-      return client.post<CreatePaymentLinkResponse>('/payment-links', params);
+      return client.post<CreatePaymentLinkResponse>('/api/v1/payment-links', params);
     },
 
     async list(
       params?: ListPaymentLinksParams
     ): Promise<ListPaymentLinksResponse> {
-      return client.get<ListPaymentLinksResponse>('/payment-links', {
+      return client.get<ListPaymentLinksResponse>('/api/v1/payment-links', {
         params,
       });
     },
 
     async get(id: string): Promise<PaymentLinkResponse> {
-      return client.get<PaymentLinkResponse>(`/payment-links/${id}`);
+      return client.get<PaymentLinkResponse>(`/api/v1/payment-links/${id}`);
     },
 
     async update(
@@ -34,21 +34,21 @@ export function createPaymentLinksResource(client: HTTPClient) {
       params: UpdatePaymentLinkParams
     ): Promise<UpdatePaymentLinkResponse> {
       return client.put<UpdatePaymentLinkResponse>(
-        `/payment-links/${id}`,
+        `/api/v1/payment-links/${id}`,
         params
       );
     },
 
     async delete(id: string): Promise<void> {
-      return client.delete<void>(`/payment-links/${id}`);
+      return client.delete<void>(`/api/v1/payment-links/${id}`);
     },
 
     async activate(id: string): Promise<PaymentLinkResponse> {
-      return client.put<PaymentLinkResponse>(`/payment-links/${id}/activate`);
+      return client.put<PaymentLinkResponse>(`/api/v1/payment-links/${id}/activate`);
     },
 
     async deactivate(id: string): Promise<PaymentLinkResponse> {
-      return client.put<PaymentLinkResponse>(`/payment-links/${id}/deactivate`);
+      return client.put<PaymentLinkResponse>(`/api/v1/payment-links/${id}/deactivate`);
     },
   };
 }

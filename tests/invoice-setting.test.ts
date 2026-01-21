@@ -32,7 +32,7 @@ describe('Invoice Setting Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/invoice-setting')
+        expect(url).toBe('/api/v1/invoice-setting')
         return mockResponse
       })
 

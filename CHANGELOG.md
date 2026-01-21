@@ -1,5 +1,11 @@
 # copperx-fn
 
+## 0.1.6
+
+### Patch Changes
+
+- updated endpoints
+
 ## 0.1.5
 
 ### Patch Changes

@@ -27,7 +27,7 @@ describe('Storage Resource', () => {
       const file = new Blob(['test content'], { type: 'text/plain' })
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/storage/files/brand-logo')
+        expect(url).toBe('/api/v1/storage/files/brand-logo')
         expect(data).toBeInstanceOf(FormData)
         return mockResponse
       })
@@ -49,7 +49,7 @@ describe('Storage Resource', () => {
       const file = new Blob(['test content'], { type: 'text/plain' })
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/storage/files/brand-logo')
+        expect(url).toBe('/api/v1/storage/files/brand-logo')
         return mockResponse
       })
 

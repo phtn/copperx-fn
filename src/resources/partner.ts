@@ -12,7 +12,7 @@ export function createPartnerResource(client: HTTPClient) {
       params: CreatePartnerAccountParams
     ): Promise<CreatePartnerAccountResponse> {
       return client.post<CreatePartnerAccountResponse>(
-        '/partner/accounts',
+        '/api/v1/partner/accounts',
         params
       );
     },
@@ -21,7 +21,7 @@ export function createPartnerResource(client: HTTPClient) {
       params: GetPartnerAccountsParams
     ): Promise<GetPartnerAccountsResponse> {
       return client.get<GetPartnerAccountsResponse>(
-        '/partner/accounts/by-emails',
+        '/api/v1/partner/accounts/by-emails',
         { params: { emails: params.emails.join(',') } }
       );
     },

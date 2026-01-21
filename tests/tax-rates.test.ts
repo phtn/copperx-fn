@@ -44,7 +44,7 @@ describe('Tax Rates Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/tax-rates')
+        expect(url).toBe('/api/v1/tax-rates')
         return mockResponse
       })
 
@@ -77,7 +77,7 @@ describe('Tax Rates Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/tax-rates')
+        expect(url).toBe('/api/v1/tax-rates')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -116,7 +116,7 @@ describe('Tax Rates Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/tax-rates/tax_123')
+        expect(url).toBe('/api/v1/tax-rates/tax_123')
         return mockResponse
       })
 
@@ -140,7 +140,7 @@ describe('Tax Rates Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string, data: unknown) => {
-        expect(url).toBe('/tax-rates/tax_123')
+        expect(url).toBe('/api/v1/tax-rates/tax_123')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -167,7 +167,7 @@ describe('Tax Rates Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string) => {
-        expect(url).toBe('/tax-rates/tax_123/activate')
+        expect(url).toBe('/api/v1/tax-rates/tax_123/activate')
         return mockResponse
       })
 
@@ -192,7 +192,7 @@ describe('Tax Rates Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string) => {
-        expect(url).toBe('/tax-rates/tax_123/deactivate')
+        expect(url).toBe('/api/v1/tax-rates/tax_123/deactivate')
         return mockResponse
       })
 

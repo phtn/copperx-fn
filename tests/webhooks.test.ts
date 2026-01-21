@@ -47,7 +47,7 @@ describe('Webhooks Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/webhook-endpoints')
+        expect(url).toBe('/api/v1/webhook-endpoints')
         return mockResponse
       })
 
@@ -81,7 +81,7 @@ describe('Webhooks Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/webhook-endpoints')
+        expect(url).toBe('/api/v1/webhook-endpoints')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -124,7 +124,7 @@ describe('Webhooks Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/webhook-endpoints/wh_123')
+        expect(url).toBe('/api/v1/webhook-endpoints/wh_123')
         return mockResponse
       })
 
@@ -149,7 +149,7 @@ describe('Webhooks Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string, data: unknown) => {
-        expect(url).toBe('/webhook-endpoints/wh_123')
+        expect(url).toBe('/api/v1/webhook-endpoints/wh_123')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -165,7 +165,7 @@ describe('Webhooks Resource', () => {
   describe('delete()', () => {
     test('should delete webhook endpoint successfully', async () => {
       mockClient.setMockDelete(async (url: string) => {
-        expect(url).toBe('/webhook-endpoints/wh_123')
+        expect(url).toBe('/api/v1/webhook-endpoints/wh_123')
         return undefined
       })
 
@@ -188,7 +188,7 @@ describe('Webhooks Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string) => {
-        expect(url).toBe('/webhook-endpoints/wh_123/regenerate')
+        expect(url).toBe('/api/v1/webhook-endpoints/wh_123/regenerate')
         return mockResponse
       })
 
@@ -206,7 +206,7 @@ describe('Webhooks Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/webhook-endpoints/wh_123/test')
+        expect(url).toBe('/api/v1/webhook-endpoints/wh_123/test')
         expect(data).toBeDefined()
         return mockResponse
       })

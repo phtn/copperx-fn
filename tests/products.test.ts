@@ -35,7 +35,7 @@ describe('Products Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/products')
+        expect(url).toBe('/api/v1/products')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -90,7 +90,7 @@ describe('Products Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/products')
+        expect(url).toBe('/api/v1/products')
         return mockResponse
       })
 
@@ -122,7 +122,7 @@ describe('Products Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/products/prod_123')
+        expect(url).toBe('/api/v1/products/prod_123')
         return mockResponse
       })
 
@@ -146,7 +146,7 @@ describe('Products Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string, data: unknown) => {
-        expect(url).toBe('/products/prod_123')
+        expect(url).toBe('/api/v1/products/prod_123')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -162,7 +162,7 @@ describe('Products Resource', () => {
   describe('delete()', () => {
     test('should delete product successfully', async () => {
       mockClient.setMockDelete(async (url: string) => {
-        expect(url).toBe('/products/prod_123')
+        expect(url).toBe('/api/v1/products/prod_123')
         return undefined
       })
 
@@ -183,7 +183,7 @@ describe('Products Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string) => {
-        expect(url).toBe('/products/prod_123/activate')
+        expect(url).toBe('/api/v1/products/prod_123/activate')
         return mockResponse
       })
 
@@ -207,7 +207,7 @@ describe('Products Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string) => {
-        expect(url).toBe('/products/prod_123/deactivate')
+        expect(url).toBe('/api/v1/products/prod_123/deactivate')
         return mockResponse
       })
 

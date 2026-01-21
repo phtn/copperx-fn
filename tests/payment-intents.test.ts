@@ -29,7 +29,7 @@ describe('Payment Intents Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/payment-intents/pi_123/receipt')
+        expect(url).toBe('/api/v1/payment-intents/pi_123/receipt')
         return mockResponse
       })
 
@@ -45,7 +45,7 @@ describe('Payment Intents Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/payment-intents/pi_123/receipt')
+        expect(url).toBe('/api/v1/payment-intents/pi_123/receipt')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -102,7 +102,7 @@ describe('Payment Intents Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/payment-intents/pi_123/refund')
+        expect(url).toBe('/api/v1/payment-intents/pi_123/refund')
         return mockResponse
       })
 
@@ -125,7 +125,7 @@ describe('Payment Intents Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/payment-intents/pi_123/refund')
+        expect(url).toBe('/api/v1/payment-intents/pi_123/refund')
         expect(data).toBeDefined()
         return mockResponse
       })

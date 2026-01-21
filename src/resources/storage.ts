@@ -27,7 +27,7 @@ export function createStorageResource(client: HTTPClient) {
       }
 
       return client.post<UploadFileResponse>(
-        `/storage/files/${storageType}`,
+        `/api/v1/storage/files/${storageType}`,
         formData,
         {
           headers: {

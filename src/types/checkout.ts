@@ -61,10 +61,6 @@ export interface CheckoutLineItemsData {
   cancelUrl?: string
 }
 
-export interface CheckoutLineItems {
-  data: CheckoutLineItemsData
-}
-
 export interface CreateCheckoutSessionParams {
   amount?: number
   currency?: string
@@ -74,7 +70,7 @@ export interface CreateCheckoutSessionParams {
   cancelUrl?: string
   metadata?: Metadata
   expiresAt?: string
-  lineItems?: CheckoutLineItems
+  lineItems?: CheckoutLineItemsData
 }
 
 export interface CreateCheckoutSessionResponse {

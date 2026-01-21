@@ -32,7 +32,7 @@ describe('Payment Setting Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/payment-setting')
+        expect(url).toBe('/api/v1/payment-setting')
         return mockResponse
       })
 

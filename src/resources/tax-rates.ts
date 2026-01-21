@@ -12,32 +12,32 @@ import type {
 export function createTaxRatesResource(client: HTTPClient) {
   return {
     async list(params?: ListTaxRatesParams): Promise<ListTaxRatesResponse> {
-      return client.get<ListTaxRatesResponse>('/tax-rates', { params });
+      return client.get<ListTaxRatesResponse>('/api/v1/tax-rates', { params });
     },
 
     async create(
       params: CreateTaxRateParams
     ): Promise<CreateTaxRateResponse> {
-      return client.post<CreateTaxRateResponse>('/tax-rates', params);
+      return client.post<CreateTaxRateResponse>('/api/v1/tax-rates', params);
     },
 
     async get(id: string): Promise<TaxRateResponse> {
-      return client.get<TaxRateResponse>(`/tax-rates/${id}`);
+      return client.get<TaxRateResponse>(`/api/v1/tax-rates/${id}`);
     },
 
     async update(
       id: string,
       params: UpdateTaxRateParams
     ): Promise<UpdateTaxRateResponse> {
-      return client.put<UpdateTaxRateResponse>(`/tax-rates/${id}`, params);
+      return client.put<UpdateTaxRateResponse>(`/api/v1/tax-rates/${id}`, params);
     },
 
     async activate(id: string): Promise<TaxRateResponse> {
-      return client.put<TaxRateResponse>(`/tax-rates/${id}/activate`);
+      return client.put<TaxRateResponse>(`/api/v1/tax-rates/${id}/activate`);
     },
 
     async deactivate(id: string): Promise<TaxRateResponse> {
-      return client.put<TaxRateResponse>(`/tax-rates/${id}/deactivate`);
+      return client.put<TaxRateResponse>(`/api/v1/tax-rates/${id}/deactivate`);
     },
   };
 }

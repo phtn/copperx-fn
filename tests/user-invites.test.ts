@@ -44,7 +44,7 @@ describe('User Invites Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/user-invites')
+        expect(url).toBe('/api/v1/user-invites')
         return mockResponse
       })
 
@@ -78,7 +78,7 @@ describe('User Invites Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/user-invites')
+        expect(url).toBe('/api/v1/user-invites')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -105,7 +105,7 @@ describe('User Invites Resource', () => {
   describe('remove()', () => {
     test('should remove invite successfully', async () => {
       mockClient.setMockDelete(async (url: string) => {
-        expect(url).toBe('/user-invites/inv_123')
+        expect(url).toBe('/api/v1/user-invites/inv_123')
         return undefined
       })
 
@@ -128,7 +128,7 @@ describe('User Invites Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string) => {
-        expect(url).toBe('/user-invites/inv_123/resend')
+        expect(url).toBe('/api/v1/user-invites/inv_123/resend')
         return mockResponse
       })
 

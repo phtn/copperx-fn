@@ -31,7 +31,7 @@ describe('Auth Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/auth/me')
+        expect(url).toBe('/api/v1/auth/me')
         return mockResponse
       })
 
@@ -107,7 +107,7 @@ describe('Auth Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/auth/points-token')
+        expect(url).toBe('/api/v1/auth/points-token')
         expect(data).toEqual({ points: 100 })
         return mockResponse
       })
@@ -124,7 +124,7 @@ describe('Auth Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/auth/points-token')
+        expect(url).toBe('/api/v1/auth/points-token')
         expect(data).toEqual({ points: 500 })
         return mockResponse
       })

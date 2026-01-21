@@ -43,7 +43,7 @@ describe('Chains Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/chains')
+        expect(url).toBe('/api/v1/chains')
         return mockResponse
       })
 
@@ -65,7 +65,7 @@ describe('Chains Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/chains')
+        expect(url).toBe('/api/v1/chains')
         return mockResponse
       })
 
@@ -111,7 +111,7 @@ describe('Chains Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/chains/eth')
+        expect(url).toBe('/api/v1/chains/eth')
         return mockResponse
       })
 

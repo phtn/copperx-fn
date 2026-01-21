@@ -13,7 +13,7 @@ export function createPaymentIntentsResource(client: HTTPClient) {
       params?: SendPaymentReceiptParams
     ): Promise<SendPaymentReceiptResponse> {
       return client.post<SendPaymentReceiptResponse>(
-        `/payment-intents/${id}/receipt`,
+        `/api/v1/payment-intents/${id}/receipt`,
         params
       );
     },
@@ -23,7 +23,7 @@ export function createPaymentIntentsResource(client: HTTPClient) {
       params?: MarkPaymentRefundedParams
     ): Promise<MarkPaymentRefundedResponse> {
       return client.post<MarkPaymentRefundedResponse>(
-        `/payment-intents/${id}/refund`,
+        `/api/v1/payment-intents/${id}/refund`,
         params
       );
     },

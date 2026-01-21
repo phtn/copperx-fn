@@ -17,7 +17,7 @@ export function createWebhooksResource(client: HTTPClient) {
     async list(
       params?: ListWebhookEndpointsParams
     ): Promise<ListWebhookEndpointsResponse> {
-      return client.get<ListWebhookEndpointsResponse>('/webhook-endpoints', {
+      return client.get<ListWebhookEndpointsResponse>('/api/v1/webhook-endpoints', {
         params,
       });
     },
@@ -26,13 +26,13 @@ export function createWebhooksResource(client: HTTPClient) {
       params: CreateWebhookEndpointParams
     ): Promise<CreateWebhookEndpointResponse> {
       return client.post<CreateWebhookEndpointResponse>(
-        '/webhook-endpoints',
+        '/api/v1/webhook-endpoints',
         params
       );
     },
 
     async get(id: string): Promise<WebhookEndpointResponse> {
-      return client.get<WebhookEndpointResponse>(`/webhook-endpoints/${id}`);
+      return client.get<WebhookEndpointResponse>(`/api/v1/webhook-endpoints/${id}`);
     },
 
     async update(
@@ -40,26 +40,26 @@ export function createWebhooksResource(client: HTTPClient) {
       params: UpdateWebhookEndpointParams
     ): Promise<UpdateWebhookEndpointResponse> {
       return client.put<UpdateWebhookEndpointResponse>(
-        `/webhook-endpoints/${id}`,
+        `/api/v1/webhook-endpoints/${id}`,
         params
       );
     },
 
     async delete(id: string): Promise<void> {
-      return client.delete<void>(`/webhook-endpoints/${id}`);
+      return client.delete<void>(`/api/v1/webhook-endpoints/${id}`);
     },
 
     async regenerateSecret(
       id: string
     ): Promise<RegenerateWebhookSecretResponse> {
       return client.post<RegenerateWebhookSecretResponse>(
-        `/webhook-endpoints/${id}/regenerate`
+        `/api/v1/webhook-endpoints/${id}/regenerate`
       );
     },
 
     async test(id: string, params: TestWebhookParams): Promise<TestWebhookResponse> {
       return client.post<TestWebhookResponse>(
-        `/webhook-endpoints/${id}/test`,
+        `/api/v1/webhook-endpoints/${id}/test`,
         params
       );
     },

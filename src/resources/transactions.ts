@@ -9,7 +9,7 @@ export function createTransactionsResource(client: HTTPClient) {
     async list(
       params?: ListTransactionsParams
     ): Promise<ListTransactionsResponse> {
-      return client.get<ListTransactionsResponse>('/transactions', {
+      return client.get<ListTransactionsResponse>('/api/v1/transactions', {
         params,
       });
     },

@@ -48,7 +48,7 @@ describe('Withdrawal Addresses Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/withdrawal-addresses')
+        expect(url).toBe('/api/v1/withdrawal-addresses')
         return mockResponse
       })
 
@@ -83,7 +83,7 @@ describe('Withdrawal Addresses Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string, data: unknown) => {
-        expect(url).toBe('/withdrawal-addresses')
+        expect(url).toBe('/api/v1/withdrawal-addresses')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -124,7 +124,7 @@ describe('Withdrawal Addresses Resource', () => {
       }
 
       mockClient.setMockGet(async (url: string) => {
-        expect(url).toBe('/withdrawal-addresses/wa_123')
+        expect(url).toBe('/api/v1/withdrawal-addresses/wa_123')
         return mockResponse
       })
 
@@ -148,7 +148,7 @@ describe('Withdrawal Addresses Resource', () => {
       }
 
       mockClient.setMockPut(async (url: string, data: unknown) => {
-        expect(url).toBe('/withdrawal-addresses/wa_123')
+        expect(url).toBe('/api/v1/withdrawal-addresses/wa_123')
         expect(data).toBeDefined()
         return mockResponse
       })
@@ -164,7 +164,7 @@ describe('Withdrawal Addresses Resource', () => {
   describe('delete()', () => {
     test('should delete withdrawal address successfully', async () => {
       mockClient.setMockDelete(async (url: string) => {
-        expect(url).toBe('/withdrawal-addresses/wa_123')
+        expect(url).toBe('/api/v1/withdrawal-addresses/wa_123')
         return undefined
       })
 
@@ -188,7 +188,7 @@ describe('Withdrawal Addresses Resource', () => {
       }
 
       mockClient.setMockPost(async (url: string) => {
-        expect(url).toBe('/withdrawal-addresses/wa_123/default')
+        expect(url).toBe('/api/v1/withdrawal-addresses/wa_123/default')
         return mockResponse
       })
 
