@@ -116,7 +116,7 @@ await client.customers.delete(customer.id);
 ### Checkout Sessions
 
 ```typescript
-// Create a checkout session
+// Create a checkout session with amount and currency
 const { checkoutSession } = await client.checkoutSessions.create({
   amount: 10000, // Amount in smallest currency unit (e.g., cents)
   currency: 'USD',
@@ -127,6 +127,45 @@ const { checkoutSession } = await client.checkoutSessions.create({
     orderId: '12345',
   },
 });
+
+// Create a checkout session with line items
+const { checkoutSession: sessionWithLineItems } =
+  await client.checkoutSessions.create({
+    lineItems: {
+      data: {
+        submitType: 'pay',
+        lineItems: {
+          data: [
+            {
+              priceData: {
+                currency: 'usdc',
+                productData: {
+                  visibility: 10,
+                  name: 'Yamashita',
+                  unitLabel: 'pc',
+                },
+                type: 'one_time',
+                unitAmount: '10000',
+                intervalCount: 1,
+              },
+              quantity: 1,
+            },
+          ],
+        },
+        paymentSetting: {
+          allowSwap: true,
+          allowFiatPayment: true,
+          allowedChains: [{ chainId: 137 }],
+          preferredChainId: 137,
+        },
+        mode: 'payment',
+        clientReferenceId: 'order-123',
+        afterCompletion: 'hosted_confirmation',
+        successUrl: 'https://yoursite.com/success',
+        cancelUrl: 'https://yoursite.com/cancel',
+      },
+    },
+  });
 
 // List checkout sessions
 const { data: sessions } = await client.checkoutSessions.list({
