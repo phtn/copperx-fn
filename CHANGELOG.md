@@ -1,5 +1,11 @@
 # copperx-fn
 
+## 0.1.4
+
+### Patch Changes
+
+- unitAmount to number type
+
 ## 0.1.2
 
 ### Patch Changes
