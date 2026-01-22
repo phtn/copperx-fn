@@ -54,6 +54,96 @@ describe('Checkout Sessions Resource', () => {
       expect(result.checkoutSession.id).toBe('cs_123')
     })
 
+    test('should create checkout session with lineItems successfully', async () => {
+      const mockResponse: CreateCheckoutSessionResponse = {
+        checkoutSession: {
+          id: 'cs_456',
+          amount: 100000,
+          currency: 'usdc',
+          status: 'pending',
+          createdAt: '2024-01-01T00:00:00Z',
+          updatedAt: '2024-01-01T00:00:00Z',
+        },
+      }
+
+      mockClient.setMockPost(async (url: string, data: unknown) => {
+        expect(url).toBe('/api/v1/checkout/sessions')
+        expect(data).toEqual({
+          data: {
+            submitType: 'pay',
+            lineItems: {
+              data: [
+                {
+                  priceData: {
+                    currency: 'usdc',
+                    productData: {
+                      visibility: 10,
+                      name: 'Yamashita',
+                      unitLabel: 'pc',
+                    },
+                    type: 'one_time',
+                    unitAmount: 100000,
+                    intervalCount: 1,
+                  },
+                  quantity: 1,
+                },
+              ],
+            },
+            paymentSetting: {
+              allowSwap: true,
+              allowFiatPayment: true,
+              allowedChains: [{ chainId: 137 }],
+              preferredChainId: 137,
+            },
+            mode: 'payment',
+            clientReferenceId: 'kjlksdfg',
+            afterCompletion: 'hosted_confirmation',
+            successUrl: 'https://rapidfirenow.com/studio',
+            cancelUrl: 'https://rapidfirenow.com/studio',
+          },
+        })
+        return mockResponse
+      })
+
+      const result = await checkoutSessionsResource.create({
+        lineItems: {
+          submitType: 'pay',
+          lineItems: {
+            data: [
+              {
+                priceData: {
+                  currency: 'usdc',
+                  productData: {
+                    visibility: 10,
+                    name: 'Yamashita',
+                    unitLabel: 'pc',
+                  },
+                  type: 'one_time',
+                  unitAmount: 100000,
+                  intervalCount: 1,
+                },
+                quantity: 1,
+              },
+            ],
+          },
+          paymentSetting: {
+            allowSwap: true,
+            allowFiatPayment: true,
+            allowedChains: [{ chainId: 137 }],
+            preferredChainId: 137,
+          },
+          mode: 'payment',
+          clientReferenceId: 'kjlksdfg',
+          afterCompletion: 'hosted_confirmation',
+          successUrl: 'https://rapidfirenow.com/studio',
+          cancelUrl: 'https://rapidfirenow.com/studio',
+        },
+      })
+
+      expect(result).toEqual(mockResponse)
+      expect(result.checkoutSession.id).toBe('cs_456')
+    })
+
     test('should handle authentication error', async () => {
       mockClient.setMockPost(async () => {
         throw new CopperxAuthenticationError('Invalid API key')
