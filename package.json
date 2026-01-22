@@ -1,6 +1,6 @@
 {
   "name": "copperx-fn",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Pure function client SDK for Copperx API",
   "type": "module",
   "main": "./dist/index.js",
