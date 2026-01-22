@@ -74,6 +74,10 @@ export interface CreateCheckoutSessionParams {
   lineItems: {
     data: CheckoutLineItem[]
   }
+  paymentSetting: CheckoutPaymentSetting
+  mode: CheckoutMode
+  clientReferenceId?: string
+  afterCompletion?: AfterCompletion
 }
 
 export interface CreateCheckoutSessionResponse {
