@@ -2,4 +2,4 @@
 'copperx-fn': patch
 ---
 
-fixed checkout params struct
+line-items

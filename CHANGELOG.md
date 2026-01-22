@@ -1,5 +1,11 @@
 # copperx-fn
 
+## 0.1.9
+
+### Patch Changes
+
+- db16d61: fixed checkout params struct
+
 ## 0.1.6
 
 ### Patch Changes

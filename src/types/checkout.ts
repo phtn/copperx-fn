@@ -1,4 +1,4 @@
-import type { PaginationParams, PaginatedResponse, Timestamps, Metadata } from './index'
+import type { Metadata, PaginatedResponse, PaginationParams, Timestamps } from './index'
 
 export type CheckoutSessionStatus = 'pending' | 'processing' | 'completed' | 'failed' | 'expired' | 'cancelled'
 
@@ -70,7 +70,9 @@ export interface CreateCheckoutSessionParams {
   cancelUrl?: string
   metadata?: Metadata
   expiresAt?: string
-  lineItems?: CheckoutLineItemsData
+  lineItems?: {
+    data: CheckoutLineItem[]
+  }
 }
 
 export interface CreateCheckoutSessionResponse {
