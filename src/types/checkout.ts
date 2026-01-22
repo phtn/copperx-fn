@@ -66,11 +66,12 @@ export interface CreateCheckoutSessionParams {
   currency?: string
   customerId?: string
   paymentLinkId?: string
-  successUrl?: string
-  cancelUrl?: string
+  successUrl: string
+  cancelUrl: string
+  submitType: SubmitType
   metadata?: Metadata
   expiresAt?: string
-  lineItems?: {
+  lineItems: {
     data: CheckoutLineItem[]
   }
 }

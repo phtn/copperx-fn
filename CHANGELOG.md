@@ -1,5 +1,11 @@
 # copperx-fn
 
+## 0.1.11
+
+### Patch Changes
+
+- 231bd4c: line-items
+
 ## 0.1.9
 
 ### Patch Changes
